@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delete Task</title>
+<!-- Bootstrap CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body {
+        background-color: #40E0D0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 30px 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    h1 {
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+    .btn-confirm {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .cancel-link {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Delete Task</h1>
+    <p>Are you sure you want to delete this task?</p>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-confirm">Confirm Deletion</button>
+    </form>
+    <a href="{% url '' %}" class="btn btn-secondary mt-3">Cancel</a>
+</div>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
